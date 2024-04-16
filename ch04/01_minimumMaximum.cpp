@@ -1,0 +1,4 @@
+/*
+  Write a program that asks the user to enter two different integers. The program should use the conditional operator 
+  to determine which number is the smaller and which is the larger.
+*/
