@@ -14,7 +14,9 @@ int main()
   double aRectWidth,
          aRectLength,
          bRectWidth,
-         bRectLength;
+         bRectLength,
+         areaA,
+         areaB;
 
   // Welcome message
   cout << "Weclome to Dan's rectangle analyzer!\n"
@@ -33,24 +35,28 @@ int main()
   cin >> bRectLength;
 
   // Validate input
-  if (aRectWidth < 0 || aRectLength < 0 || bRectWidth < 0 || bRectLength < 0)
+  if (aRectWidth <= 0 || aRectLength <= 0 || bRectWidth <= 0 || bRectLength <= 0)
   {
-    cout << "Invalid input! Exiting..\n";
+    cout << "Invalid input! Values must be greater than 0! Exiting..\n";
     return 1;
   }
 
+  // Calculare area of rectangles
+  areaA = aRectWidth * aRectLength;
+  areaB = bRectWidth * bRectLength;
+
   // Determine which rectangle is larger and inform user
-  if ( (aRectWidth * aRectLength) > (bRectWidth * bRectLength) )
+  if ( areaA > areaB )
   {
-    cout << "\nRectangle A, with an area of " << aRectWidth * aRectLength << " square inches, "
-         << "is larger than Rectangle B (" << bRectWidth * bRectLength << " square inches).\n";
-  } else if ( (aRectWidth * aRectLength) < (bRectWidth * bRectLength) )
+    cout << "\nRectangle A, with an area of " << areaA << " square inches, "
+         << "is larger than Rectangle B (" << areaB << " square inches).\n";
+  } else if ( areaA < areaB )
   {
-    cout << "\nRectangle B, with an area of " << bRectWidth * bRectLength << " square inches, "
-         << "is larger than Rectangle A (" << aRectWidth * aRectLength << " square inches)\n";
+    cout << "\nRectangle B, with an area of " << areaB << " square inches, "
+         << "is larger than Rectangle A (" << areaA << " square inches)\n";
   } else 
   {
-    cout << "\nRectangle A and B are equal in size! They are both " << aRectWidth * aRectLength << " square inches!\n";
+    cout << "\nRectangle A and B are equal in size! They are both " << areaA << " square inches!\n";
   }
 
   return 0;
