@@ -1,0 +1,7 @@
+SAVINGS ACCOUNT REPORT
+-----------------------
+Starting balance:    $2300.00
+Total deposits:      $5200.00
+Total withdrawals:   $1527.00
+Total interest:      $118.08
+Final balance:       $6091.08
