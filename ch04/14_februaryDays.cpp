@@ -14,3 +14,28 @@ Here is a sample run of the program:
     Enter a year:  2020[Enter]
     In 2020 February has 29 days.
 */
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int year;
+
+    cout << "Enter a year: ";
+    cin >> year;
+
+    if (year % 400 == 0) {
+        if (year % 100 == 0) {
+            cout << "In " << year << " February has 29 days\n";
+        } else {
+            cout << "In " << year << " February has 28 days\n";
+        }
+    } else if (year % 4 == 0) {
+        cout << "In " << year << " February has 29 days\n";
+    } else {
+        cout << "In " << year << " February has 28 days\n";
+    }
+
+    return 0;
+}

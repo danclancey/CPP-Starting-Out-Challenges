@@ -24,3 +24,48 @@
 
     Main Street Pizza Corner Cafe The Chef’s Kitchen
 */
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string isVegetarian, isVegan, isGlutenFree;
+    string matchingRestaurants = "";
+
+    cout << "Welcome to Dan's Restaurant Selector!\n";
+    cout << "-------------------------------------\n\n";
+    cout << "This program will output restaurants based on dietary restrictions.\n\n";
+
+    // Ask for dietary restrictions
+    cout << "Is anyone in your party vegetarian (y/n)? ";
+    cin >> isVegetarian;
+    cout << "Is anyone in your party vegan (y/n)? ";
+    cin >> isVegan;
+    cout << "Is anyone in your party gluten-free (y/n)? ";
+    cin >> isGlutenFree;
+
+    // Determine matching restaurants
+    if (isVegetarian == "n" && isVegan == "n" && isGlutenFree == "n")
+    {
+        matchingRestaurants += "Joe's Gourmet Burgers\n";
+    }
+    if (isVegan == "n")
+    {
+        matchingRestaurants += "Main Street Pizza\n";
+    }
+    if (isVegan == "n" && isGlutenFree == "n")
+    {
+        matchingRestaurants += "Mama's Fine Italian\n";
+    }
+    matchingRestaurants += "Corner Cafe\n";
+    matchingRestaurants += "The Chef's Kitchen\n";
+
+    // Display Results
+    cout << "\nHere are your restaurant choices:\n\n";
+    cout << matchingRestaurants << endl;
+
+    return 0;
+}
+

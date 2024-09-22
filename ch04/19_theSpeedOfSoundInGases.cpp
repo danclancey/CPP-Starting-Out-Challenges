@@ -17,3 +17,62 @@
 
   Input Validation: If the use enters an invalid menu choice the program should display an error message instead of prompting for the number of seconds.
 */
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    int choice;
+    double seconds, distance;
+    const double maxSeconds = 30.0;  // Maximum valid time for input
+
+    // Display menu options
+    cout << "Select a gas medium from the following:\n";
+    cout << "1. Carbon dioxide\n";
+    cout << "2. Air\n";
+    cout << "3. Helium\n";
+    cout << "4. Hydrogen\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    // Check if the user entered a valid choice
+    if (choice < 1 || choice > 4) {
+        cout << "Invalid choice! Please select a valid option from 1 to 4.\n";
+        return 0; // Exit program
+    }
+
+    // Prompt the user to enter the time in seconds
+    cout << "Enter the number of seconds (0 to 30): ";
+    cin >> seconds;
+
+    // Input validation for seconds
+    if (seconds < 0 || seconds > maxSeconds) {
+        cout << "Invalid time! Seconds must be between 0 and 30.\n";
+        return 0;
+    }
+
+    // Calculate the distance based on the selected medium
+    switch (choice) {
+        case 1:
+            distance = seconds * 258.0; // Carbon dioxide
+            break;
+        case 2:
+            distance = seconds * 331.5; // Air
+            break;
+        case 3:
+            distance = seconds * 972.0; // Helium
+            break;
+        case 4:
+            distance = seconds * 1270.0; // Hydrogen
+            break;
+    }
+
+    // Display the result
+    cout << fixed << setprecision(2);
+    cout << "The source of the sound was approximately " << distance << " meters away.\n";
+
+    return 0;
+}
+

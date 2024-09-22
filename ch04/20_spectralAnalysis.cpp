@@ -8,3 +8,38 @@
    <--------------|--------------|--------------|--------------|---------------|--------------|-------------->
     Gamma rays        X-Rays       Ultraviolet    Visible Light    Infrared       Microwaves     Radio Waves
 */
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    double wavelength;
+
+    // Ask the user to input the wavelength in meters
+    cout << "Enter the wavelength of the electromagnetic wave (in meters): ";
+    cin >> wavelength;
+
+    // Determine the type of electromagnetic radiation based on wavelength
+    if (wavelength < 1E-11) {
+        cout << "The wave is a Gamma ray.\n";
+    } else if (wavelength >= 1E-11 && wavelength < 1E-8) {
+        cout << "The wave is an X-ray.\n";
+    } else if (wavelength >= 1E-8 && wavelength < 4E-7) {
+        cout << "The wave is Ultraviolet.\n";
+    } else if (wavelength >= 4E-7 && wavelength < 7E-7) {
+        cout << "The wave is Visible Light.\n";
+    } else if (wavelength >= 7E-7 && wavelength < 1E-3) {
+        cout << "The wave is Infrared.\n";
+    } else if (wavelength >= 1E-3 && wavelength < 1E-2) {
+        cout << "The wave is a Microwave.\n";
+    } else if (wavelength >= 1E-2) {
+        cout << "The wave is a Radio wave.\n";
+    } else {
+        cout << "Invalid wavelength.\n";
+    }
+
+    return 0;
+}
+

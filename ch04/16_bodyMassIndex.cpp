@@ -13,3 +13,28 @@
   and 25. If the BMI is less than 18.5, the person is considered to be underweight. If the BMI value is 
   greater than 25, the person is considered to be overweight.
 */
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    double weight, height, BMI;
+
+    cout << "Please enter your weight (in pounds): ";
+    cin >> weight;
+    cout << "Please enter your height (in inches): ";
+    cin >> height;
+
+    BMI = weight * 703 / (height * height);
+    cout << "Your BMI is : " << BMI << endl;
+    
+    if (BMI < 18.5) {
+        cout << "You are underweight!\n";
+    } else if ( BMI >= 18.5 && BMI <= 25)
+        cout << "Your weight is optimal!\n";
+    else
+        cout << "You are overweight!\n";
+      
+    return 0;
+}
