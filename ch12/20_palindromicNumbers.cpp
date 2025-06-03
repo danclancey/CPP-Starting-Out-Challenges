@@ -15,3 +15,37 @@ Hint: If str is a string object, the reverse() function (declared in <algorithm>
 
         reverse(str.begin(), str.end());
 */
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+bool isPalindrome(long long n) {
+    string s = to_string(n);
+
+    string reversedS = s;
+    reverse(reversedS.begin(), reversedS.end());
+
+    return s == reversedS;
+}
+
+int main() {
+    cout << "Listing numbers less than 10k whose squares are also palindromic:\n";
+    int count = 0;
+
+    for (long long i = 1; i < 10000; ++i) {
+        long long iSquared = i * i;
+
+        if (isPalindrome(i) && isPalindrome(iSquared)) {
+            cout << i << " has square " << iSquared << endl;
+            count++;
+        }
+    }
+
+    cout << "\nTotal number of such ints found: " << count << endl;
+
+    return 0;
+}
