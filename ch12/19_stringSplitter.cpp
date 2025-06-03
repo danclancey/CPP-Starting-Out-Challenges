@@ -15,3 +15,54 @@ results in the output
         does
         fine.
 */
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <sstream>
+
+using namespace std;
+
+vector<string> split(const string& str) {
+    vector<string> words;
+    stringstream ss(str);
+    string word;
+
+    while (ss >> word) {
+        words.push_back(word);
+    }
+
+    return words;
+}
+
+int main() {
+    string line;
+
+    cout << "Enter lines of text to split into words.\n";
+    cout << "Type 'quit' or an empty line to exist.\n";
+
+    while(true) {
+        cout << "\nInput:";
+        getline(cin, line);
+
+        if (line.empty() || line == "quit") {
+            cout << "Exiting program.\n";
+            break;
+        }
+
+        vector<string> wordsInLine = split(line);
+
+        cout << "Output words: \n";
+        if (wordsInLine.empty() && !line.empty() && line.find_first_not_of(" \t\n\v\f\r") == string::npos) {
+            cout << "(Line contained only whitespace)\n";
+        } else if (wordsInLine.empty()) {
+            cout << "(No words to display)\n";
+        } else {
+            for (const string& w : wordsInLine) {
+                cout << w << endl;
+            }
+        }
+    }
+
+    return 0;
+}
